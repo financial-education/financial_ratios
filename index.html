@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-07-31 Fri 10:34 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Financial Ratios</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Matt Brigida, Ph.D." />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Financial Ratios</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org9ae5492">1. Motivation</a></li>
+<li><a href="#orgbcec738">2. A Few Pointers</a></li>
+<li><a href="#orged32f81">3. Categories</a></li>
+<li><a href="#org3d0a5b7">4. Leverage Ratios</a>
+<ul>
+<li><a href="#org79c94db">4.1. Debt-to-Equity and Equity Multiplier Ratios</a></li>
+</ul>
+</li>
+<li><a href="#org5c111bc">5. Liquidity Ratios</a>
+<ul>
+<li><a href="#org4392faf">5.1. The Current Ratio</a></li>
+</ul>
+</li>
+<li><a href="#org5f4ffad">6. Asset Use Efficiency Ratios</a>
+<ul>
+<li><a href="#org01fbccf">6.1. Total Asset Turnover</a></li>
+</ul>
+</li>
+<li><a href="#orgc2bbaa2">7. Profitability Ratios</a>
+<ul>
+<li><a href="#org64e8a5e">7.1. Profit Margin</a></li>
+</ul>
+</li>
+<li><a href="#orga780a17">8. Market Value Ratios</a>
+<ul>
+<li><a href="#orgf238b2c">8.1. Example: P/E Ratio</a></li>
+</ul>
+</li>
+<li><a href="#org5902596">9. When to Use a Ratio</a></li>
+<li><a href="#org92d12de">10. Using Ratios for DuPont Analysis</a></li>
+<li><a href="#orgae0bfea">11. Interactive App</a></li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-org9ae5492" class="outline-2">
+<h2 id="org9ae5492"><span class="section-number-2">1</span> Motivation</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Modern financial statements provide a great deal of data on companies.  Financial ratios turn that data into bits of useful information.
+</p>
+
+<ul class="org-ul">
+<li>They often do this by scaling a data point relative to another aspect of the company.</li>
+</ul>
+
+<p>
+Financial ratios are generally used to:
+</p>
+
+<ol class="org-ol">
+<li>Compare a single company's performance over time.</li>
+<li>Compare performance across companies.</li>
+<li>Compare performance across the whole market.</li>
+</ol>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgbcec738" class="outline-2">
+<h2 id="orgbcec738"><span class="section-number-2">2</span> A Few Pointers</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Financial ratios are most informative when used to compare companies in the <b>same</b> industry and with the similar market cap.
+</p>
+
+<ul class="org-ul">
+<li>You should never compare a bank's ratios with that of a biotech company.</li>
+
+<li>You should not compare a small cap company with a large cap company.</li>
+
+<li>Know the reasonable benchmark for a ratio and be careful that the benchmark could change in different industry or time horizon.</li>
+
+<li>Use the right ratios to answer your question.</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orged32f81" class="outline-2">
+<h2 id="orged32f81"><span class="section-number-2">3</span> Categories</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+We can classify financial ratios into 5 categories:
+</p>
+
+<ul class="org-ul">
+<li>Leverage (or Long-Term Solvency)</li>
+<li>Liquidity (or Short-Term Solvency)</li>
+<li>Asset Use Efficiency</li>
+<li>Profitability</li>
+<li>Market Value Measures</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-org3d0a5b7" class="outline-2">
+<h2 id="org3d0a5b7"><span class="section-number-2">4</span> Leverage Ratios</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+These ratios measure the firm's long-term ability to meet its debt obligations.  These are measures of overall assets relative to obligations.  They include assets which are hard to sell.  Examples of leverage ratios are:
+</p>
+
+<ul class="org-ul">
+<li>Total Debt Ratio: total debt divided by total assets</li>
+<li>Times Interest Earned Ratio: earnings before interest and taxes (EBIT) divided by the interest payment</li>
+<li>Cash Coverage Ratio: the sum of EBIT and depreciation and amortization, divided by the interest payment</li>
+<li>Debt-to-Equity Ratio: total debt divided by total equity.</li>
+<li>Equity Multiplier: assets divided by equity, or equivalently 1 plus the debt-to-equity ratio.</li>
+</ul>
+</div>
+
+
+
+<div id="outline-container-org79c94db" class="outline-3">
+<h3 id="org79c94db"><span class="section-number-3">4.1</span> Debt-to-Equity and Equity Multiplier Ratios</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Two widely used <b>leverage ratios</b> are the debt-to-equity ratio and the equity multiplier.  
+</p>
+
+<ul class="org-ul">
+<li>Say a firm has total assets of $150 million, total liabilities of $100 million, and total equity of $50 million. Then its debt-to-equity ratio is $100/$150 = 66.67\% and the equity multiplier is 1.6667.</li>
+<li>The value that these ratio take is industry and company specific.  Young firms tend to have little to no debt, and so low debt-to-equity ratios. More established firms may have higher ratios.</li>
+</ul>
+
+<p>
+To see the relationship between these two ratios, remember \(Assets \equiv Liabilities + Equity\):
+</p>
+
+<p>
+\(Equity\ Multiplier \equiv \frac{Assets}{Equity}\) = \(\frac{Debt}{Equity} + \frac{Equity}{Equity}\) = Debt-to-Equity Ratio + 1
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org5c111bc" class="outline-2">
+<h2 id="org5c111bc"><span class="section-number-2">5</span> Liquidity Ratios</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+These ratios measure the firm's ability to meet its debt obligations over the short-term (over the next year).  As an analogy, you can think of these as measuring how much money you have in your wallet.  You can't sell your house to pay your water bill this week.  Examples of Liquidity Ratios are:
+</p>
+
+<ul class="org-ul">
+<li>Cash Ratio: cash divided by current liabilities.</li>
+<li>Current Ratio: current assets divided by current liabilities.</li>
+<li>Quick Ratio: current assets less inventory divided by current liabilities.</li>
+</ul>
+</div>
+
+
+
+<div id="outline-container-org4392faf" class="outline-3">
+<h3 id="org4392faf"><span class="section-number-3">5.1</span> The Current Ratio</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+The current ratio is widely cited.  Say a firm has current assets of $10 million, and current liabilities of $8 million, then its current ratio is 1.25 times.  We don't want the current ratio to be too high (say above 2) or too low (say below 1). 
+</p>
+
+<ul class="org-ul">
+<li>If the current ratio is too high, this is evidence that the firm has too much cash, and may not be reinvesting the cash because of new avenues for growth.  Remember cash (liquid assets) earn low returns.</li>
+
+<li>If the current ratio is too low, then the firm may not have enough money to pay its bills over the short term&#x2014;this can occur even if the firm is profitable, so it is not sufficient to look at net income.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org5f4ffad" class="outline-2">
+<h2 id="org5f4ffad"><span class="section-number-2">6</span> Asset Use Efficiency Ratios</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+These measure how efficiently a firms uses its assets.  For example, how much in sales does a firm generate from $1.00 in assets.  Examples of <b>asset use efficiency ratios</b> are:
+</p>
+
+<ul class="org-ul">
+<li>Inventory Turnover: cost of goods sold (COGS) divided by inventory.</li>
+<li>Days' Sales in Inventory: 365 days divided by inventory turnover.</li>
+<li>Receivables Turnover: sales divided by accounts receivable.</li>
+<li>Total Asset Turnover: sales divided by total assets.</li>
+</ul>
+</div>
+
+
+
+<div id="outline-container-org01fbccf" class="outline-3">
+<h3 id="org01fbccf"><span class="section-number-3">6.1</span> Total Asset Turnover</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Say a firm has $500 million in sales, and its assets total $2 billion.  Then it has a total asset turnover of 0.25 times.  We interpret is as, 'for every dollar in assets, the firm generates $0.25 in sales'.  
+</p>
+
+<ul class="org-ul">
+<li>Of course, you would want to generate these sales with as few assets as possible.  So we would prefer our total asset turnover to be as high as possible.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgc2bbaa2" class="outline-2">
+<h2 id="orgc2bbaa2"><span class="section-number-2">7</span> Profitability Ratios</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+These measures focus on how well a firm translates a dollar of sales into income. Examples of <b>profitability ratios</b> are:
+</p>
+
+<ul class="org-ul">
+<li>Return on Assets: net income divided by total assets.</li>
+<li>Profit Margin: net income divided by sales.</li>
+<li>EBITDA Margin: earnings before interest depreciation and amortization (EBITDA) divided by sales.</li>
+</ul>
+</div>
+
+
+
+<div id="outline-container-org64e8a5e" class="outline-3">
+<h3 id="org64e8a5e"><span class="section-number-3">7.1</span> Profit Margin</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+Say a firm has $100 million in net income.  Alone this data point is not too useful.  However, what if we also say this income was generated on $500 million in sales?
+</p>
+
+<ul class="org-ul">
+<li>Then we can say for every $1 in sales, the company generates $0.20 in income.</li>
+
+<li>Put another way, the company has a $\frac{$100M}{$500M} = 20\%$ profit margin.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orga780a17" class="outline-2">
+<h2 id="orga780a17"><span class="section-number-2">8</span> Market Value Ratios</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+These measures capture what value the market assigns to each dollar of a firm's earnings, sales, or book value.  Examples of <b>market value ratios</b> are:
+</p>
+
+<ul class="org-ul">
+<li>Price Earnings Ratio: price per share divided by earnings per share (EPS).</li>
+
+<li>Price Sales Ratio: market capitalization (price per share x # of shares) divided by sales.</li>
+
+<li>Market-to-Book Ratio: market value per share divided by book value per share.</li>
+</ul>
+</div>
+
+
+
+<div id="outline-container-orgf238b2c" class="outline-3">
+<h3 id="orgf238b2c"><span class="section-number-3">8.1</span> Example: P/E Ratio</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+A firm's P/E ratio is its stock price (per share) divided by its earnings per share (EPS).  However, if EPS is negative the ratio is undefined.
+</p>
+
+<ul class="org-ul">
+<li>Say a firm has a stock price of $30 per share, and EPS of $2, then the firm's P/E ratio is 15.</li>
+
+<li>We can interpret this as, 'for every $1 in earnings, the market is willing to pay $15'.</li>
+
+<li>The faster a firm is growing, the higher its P/E ratio tends to be.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org5902596" class="outline-2">
+<h2 id="org5902596"><span class="section-number-2">9</span> When to Use a Ratio</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+If you are considering buying GE's stock.  Do you care about GE's current ratio?
+</p>
+
+<ul class="org-ul">
+<li>Not really.  The current ratio only considers short term accounts, and as an equity holder you care about the firm's long-term prospects.</li>
+<li>You would certainly be interested in the Return on Equity, Debt-to-Equity ratio, and Total Asset Turnover among other measures of long-term performance.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org92d12de" class="outline-2">
+<h2 id="org92d12de"><span class="section-number-2">10</span> Using Ratios for DuPont Analysis</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+The Dupont Analysis uses ratios to show how firm efficiency and leverage can influence shareholder returns (ROE)
+</p>
+
+<p>
+\(ROE \equiv (Profit\ Margin)(Total\ Asset\ Turnover)(Equity\ Multiplier)\) 
+</p>
+
+<ul class="org-ul">
+<li>This can be seen here noting that <b>Sales</b> and <b>Assets</b> cancel on the right-hand side:</li>
+</ul>
+
+<p>
+\(\frac{Earnings}{Equity} =  (\frac{Earnings}{Sales})(\frac{Sales}{Assets})(\frac{Assets}{Equity})\)
+</p>
+
+<ul class="org-ul">
+<li>Profit margin measures a firm's ability to control expenses (operational efficiency)</li>
+<li>Total asset turnover shows how many dollars of sales are provided by a dollar of asset (asset efficiency)</li>
+<li>Equity multiplier is a measure of firm leverage</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgae0bfea" class="outline-2">
+<h2 id="orgae0bfea"><span class="section-number-2">11</span> Interactive App</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+In the next slide you can choose two stocks, and one of four financial ratios, and see their performance over time.  
+</p>
+
+<ul class="org-ul">
+<li>Remember, the comparison makes the most sense if you choose two stocks in the same industry.</li>
+</ul>
+
+<p>
+[Because Google and then the IEX changed their APIs, we have to fix the following app.]
+</p>
+
+<p>
+<a href="https://micfm.shinyapps.io/financial_ratios_app1/">https://micfm.shinyapps.io/financial_ratios_app1/</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Matt Brigida, Ph.D.</p>
+<p class="date">Created: 2020-07-31 Fri 10:34</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

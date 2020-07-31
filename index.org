@@ -1,0 +1,188 @@
+#+title: Financial Ratios
+#+author: Matt Brigida, Ph.D.
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+
+
+
+* Motivation
+
+Modern financial statements provide a great deal of data on companies.  Financial ratios turn that data into bits of useful information.
+
+-  They often do this by scaling a data point relative to another aspect of the company.
+
+Financial ratios are generally used to:
+
+1.  Compare a single company's performance over time.
+2.  Compare performance across companies.
+3.  Compare performance across the whole market.
+
+ 
+
+* A Few Pointers
+
+Financial ratios are most informative when used to compare companies in the *same* industry and with the similar market cap.
+
+- You should never compare a bank's ratios with that of a biotech company.  
+
+- You should not compare a small cap company with a large cap company.
+
+- Know the reasonable benchmark for a ratio and be careful that the benchmark could change in different industry or time horizon.
+
+- Use the right ratios to answer your question.
+
+ 
+
+* Categories
+
+We can classify financial ratios into 5 categories:
+
+- Leverage (or Long-Term Solvency)
+- Liquidity (or Short-Term Solvency)
+- Asset Use Efficiency
+- Profitability
+- Market Value Measures
+
+ 
+
+* Leverage Ratios
+
+These ratios measure the firm's long-term ability to meet its debt obligations.  These are measures of overall assets relative to obligations.  They include assets which are hard to sell.  Examples of leverage ratios are:
+
+- Total Debt Ratio: total debt divided by total assets
+- Times Interest Earned Ratio: earnings before interest and taxes (EBIT) divided by the interest payment
+- Cash Coverage Ratio: the sum of EBIT and depreciation and amortization, divided by the interest payment
+- Debt-to-Equity Ratio: total debt divided by total equity.
+- Equity Multiplier: assets divided by equity, or equivalently 1 plus the debt-to-equity ratio.  
+
+ 
+
+** Debt-to-Equity and Equity Multiplier Ratios
+
+Two widely used *leverage ratios* are the debt-to-equity ratio and the equity multiplier.  
+
+-  Say a firm has total assets of $150 million, total liabilities of $100 million, and total equity of $50 million. Then its debt-to-equity ratio is $100/$150 = 66.67\% and the equity multiplier is 1.6667.
+-  The value that these ratio take is industry and company specific.  Young firms tend to have little to no debt, and so low debt-to-equity ratios. More established firms may have higher ratios.  
+
+To see the relationship between these two ratios, remember $Assets \equiv Liabilities + Equity$:
+
+$Equity\ Multiplier \equiv \frac{Assets}{Equity}$ = $\frac{Debt}{Equity} + \frac{Equity}{Equity}$ = Debt-to-Equity Ratio + 1
+
+
+ 
+
+* Liquidity Ratios
+
+These ratios measure the firm's ability to meet its debt obligations over the short-term (over the next year).  As an analogy, you can think of these as measuring how much money you have in your wallet.  You can't sell your house to pay your water bill this week.  Examples of Liquidity Ratios are:
+
+- Cash Ratio: cash divided by current liabilities.
+- Current Ratio: current assets divided by current liabilities.
+- Quick Ratio: current assets less inventory divided by current liabilities.  
+
+ 
+
+** The Current Ratio
+
+The current ratio is widely cited.  Say a firm has current assets of $10 million, and current liabilities of $8 million, then its current ratio is 1.25 times.  We don't want the current ratio to be too high (say above 2) or too low (say below 1). 
+
+- If the current ratio is too high, this is evidence that the firm has too much cash, and may not be reinvesting the cash because of new avenues for growth.  Remember cash (liquid assets) earn low returns.  
+
+-  If the current ratio is too low, then the firm may not have enough money to pay its bills over the short term---this can occur even if the firm is profitable, so it is not sufficient to look at net income.
+
+ 
+
+* Asset Use Efficiency Ratios
+
+These measure how efficiently a firms uses its assets.  For example, how much in sales does a firm generate from $1.00 in assets.  Examples of *asset use efficiency ratios* are:
+
+- Inventory Turnover: cost of goods sold (COGS) divided by inventory.
+- Days' Sales in Inventory: 365 days divided by inventory turnover.
+- Receivables Turnover: sales divided by accounts receivable.
+- Total Asset Turnover: sales divided by total assets.
+
+ 
+
+** Total Asset Turnover
+
+Say a firm has $500 million in sales, and its assets total $2 billion.  Then it has a total asset turnover of 0.25 times.  We interpret is as, 'for every dollar in assets, the firm generates $0.25 in sales'.  
+
+- Of course, you would want to generate these sales with as few assets as possible.  So we would prefer our total asset turnover to be as high as possible. 
+
+ 
+
+* Profitability Ratios
+
+These measures focus on how well a firm translates a dollar of sales into income. Examples of *profitability ratios* are:
+
+- Return on Assets: net income divided by total assets.
+- Profit Margin: net income divided by sales.
+- EBITDA Margin: earnings before interest depreciation and amortization (EBITDA) divided by sales.
+
+ 
+
+** Profit Margin
+
+Say a firm has $100 million in net income.  Alone this data point is not too useful.  However, what if we also say this income was generated on $500 million in sales?
+
+- Then we can say for every $1 in sales, the company generates $0.20 in income.
+
+- Put another way, the company has a $\frac{$100M}{$500M} = 20\%$ profit margin. 
+
+ 
+
+* Market Value Ratios
+
+These measures capture what value the market assigns to each dollar of a firm's earnings, sales, or book value.  Examples of *market value ratios* are:
+
+- Price Earnings Ratio: price per share divided by earnings per share (EPS). 
+
+- Price Sales Ratio: market capitalization (price per share x # of shares) divided by sales. 
+
+- Market-to-Book Ratio: market value per share divided by book value per share.
+
+ 
+
+** Example: P/E Ratio
+
+A firm's P/E ratio is its stock price (per share) divided by its earnings per share (EPS).  However, if EPS is negative the ratio is undefined.
+
+- Say a firm has a stock price of $30 per share, and EPS of $2, then the firm's P/E ratio is 15.
+
+- We can interpret this as, 'for every $1 in earnings, the market is willing to pay $15'.
+
+- The faster a firm is growing, the higher its P/E ratio tends to be.  
+
+ 
+
+* When to Use a Ratio
+
+If you are considering buying GE's stock.  Do you care about GE's current ratio?
+
+- Not really.  The current ratio only considers short term accounts, and as an equity holder you care about the firm's long-term prospects.  
+- You would certainly be interested in the Return on Equity, Debt-to-Equity ratio, and Total Asset Turnover among other measures of long-term performance. 
+
+
+* Using Ratios for DuPont Analysis
+
+The Dupont Analysis uses ratios to show how firm efficiency and leverage can influence shareholder returns (ROE)
+
+$ROE \equiv (Profit\ Margin)(Total\ Asset\ Turnover)(Equity\ Multiplier)$ 
+
+- This can be seen here noting that *Sales* and *Assets* cancel on the right-hand side:
+
+$\frac{Earnings}{Equity} =  (\frac{Earnings}{Sales})(\frac{Sales}{Assets})(\frac{Assets}{Equity})$
+
+- Profit margin measures a firm's ability to control expenses (operational efficiency)
+- Total asset turnover shows how many dollars of sales are provided by a dollar of asset (asset efficiency)
+- Equity multiplier is a measure of firm leverage
+
+ 
+
+* Interactive App
+
+In the next slide you can choose two stocks, and one of four financial ratios, and see their performance over time.  
+
+-  Remember, the comparison makes the most sense if you choose two stocks in the same industry.
+
+[Because Google and then the IEX changed their APIs, we have to fix the following app.]
+
+https://micfm.shinyapps.io/financial_ratios_app1/
